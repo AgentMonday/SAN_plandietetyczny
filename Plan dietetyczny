@@ -59,14 +59,12 @@ int main() {
     // Sugerowane posiłki z przykładowymi daniami i ich kalorycznością
     cout << "Twoje dziennie zapotrzebowanie kaloryczne wynosi: " << zapotrzebowanie << " kalorii." << endl;
     cout << "Oto przykładowe posiłki na Twój cel:" << endl;
-    cout<<"przytyć:" << endl;
     cout<< "Śniadanie: jajecznica z 6 jajek z kefirem (480kcal)" <<endl;
     cout << "Śniadanie: Jajecznica 4 jajka z warzywami (350 kcal)" << endl;
     cout << "Lunch: Sałatka z kurczakiem i awokado (450 kcal)" << endl;
     cout << "Podwieczorek: Owoce (100 kcal)" << endl;
     cout << "Obiad: Ryż z tuńczykiem i warzywami (500 kcal)" << endl;
     cout << "Kolacja: Grillowany łosoś z brokułami (400 kcal)" << endl;
-    cout << "Pizza Sukcesyliana KIZO (1200kcal)" << endl;
     cout << "Sałatka z kurczakiem i awokado (450kcal)" <<endl;
 
     // Wybór użytkownika: dieta lub wyjście z programu (NIE UDAJE SIĘ TEGO ZROBIĆ)
@@ -76,7 +74,7 @@ int main() {
 
     while (wybor == 'T' || wybor == 't') {
         // co dalej 
-        cout << "Dziękujemy za skorzystanie z programu. Powodzenia z realizacją celu!" << endl;
+        cout << "Dziękujemy za skorzystanie z programu. Powodzenia z realizacją celu! Zapraszamy na stronę www.sport.pl" << endl;
         return 0;
     }
 
