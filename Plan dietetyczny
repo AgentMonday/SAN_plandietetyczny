@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+// Struktura reprezentująca posiłek
+struct Meal {
+    string name;
+    double calories;
+
+    Meal(const string& n, double c) : name(n), calories(c) {}
+};
+
+int main() {
+    setlocale(LC_ALL, "pl_PL.utf8");
+    setlocale(LC_CTYPE, "Polish");
+    double waga, wzrost, wiek;
+    char plec;
+    string cel;
+
+    // Wprowadzenie danych użytkownika
+    cout << "Witaj! Proszę podać swoje dane." << endl;
+    cout << "Podaj wagę (w kilogramach): ";
+    cin >> waga;
+    cout << "Podaj wzrost (w centymetrach): ";
+    cin >> wzrost;
+    cout << "Podaj wiek: ";
+    cin >> wiek;
+    cout << "Podaj płeć (M - mężczyzna, K - kobieta): ";
+    cin >> plec;
+    cout << "Jaki jest Twój cel (przytyć(1)/schudnąć(2)/zostawić wagę(3)): ";
+    cin >> cel;
+
+    // Obliczenie BMR/BMI (Podstawowa przemiana materii)
+    double bmr;
+    if (plec == 'M') {
+        bmr = 88.362 + (13.397 * waga) + (4.799 * wzrost) - (5.677 * wiek);
+    } else if (plec == 'K') {
+        bmr = 447.593 + (9.247 * waga) + (3.098 * wzrost) - (4.330 * wiek);
+    } else {
+        cout << "Błędna płeć. Proszę podać M lub K." << endl;
+        return 1;
+    }
+
+    // Obliczenie zapotrzebowania kalorycznego z uwzględnieniem celu
+    double zapotrzebowanie;
+    if (cel == "1") {
+        zapotrzebowanie = bmr * 1.2;
+    } else if (cel == "2") {
+        zapotrzebowanie = bmr * 0.8;
+    } else if (cel == "3") {
+        zapotrzebowanie = bmr;
+    } else {
+        cout << "Nieznany cel. Proszę podać 'przytyć(1)', 'schudnąć(2)' lub 'zostawić wagę(3)'." << endl;
+        return 1;
+    }
+
+    // Sugerowane posiłki z przykładowymi daniami i ich kalorycznością
+    cout << "Twoje dziennie zapotrzebowanie kaloryczne wynosi: " << zapotrzebowanie << " kalorii." << endl;
+    cout << "Oto przykładowe posiłki na Twój cel:" << endl;
+    cout<<"przytyć:" << endl;
+    cout<< "Śniadanie: jajecznica z 6 jajek z kefirem (480kcal)" <<endl;
+    cout << "Śniadanie: Jajecznica 4 jajka z warzywami (350 kcal)" << endl;
+    cout << "Lunch: Sałatka z kurczakiem i awokado (450 kcal)" << endl;
+    cout << "Podwieczorek: Owoce (100 kcal)" << endl;
+    cout << "Obiad: Ryż z tuńczykiem i warzywami (500 kcal)" << endl;
+    cout << "Kolacja: Grillowany łosoś z brokułami (400 kcal)" << endl;
+    cout << "Pizza Sukcesyliana KIZO (1200kcal)" << endl;
+    cout << "Sałatka z kurczakiem i awokado (450kcal)" <<endl;
+
+    // Wybór użytkownika: dieta lub wyjście z programu (NIE UDAJE SIĘ TEGO ZROBIĆ)
+    char wybor;
+    cout << "Czy chcesz poznać więcej informacji na temat diety? (T/N): ";
+    cin >> wybor;
+
+    while (wybor == 'T' || wybor == 't') {
+        // co dalej 
+        cout << "Dziękujemy za skorzystanie z programu. Powodzenia z realizacją celu!" << endl;
+        return 0;
+    }
+
+    // Baza danych posiłkow 
+    // ...
+
+    return 0;
+}
